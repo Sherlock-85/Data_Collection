@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Data Collection App</title>
+    <link href="../static/main.css", rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1>Collecting Age and Height</h1>
+        <h2>Please fill the entries to get the population statistics on age and height</h2>
+        <div class="message">
+            {{text | safe}}
+        </div>
+        <form action="{{ url_for('success') }}" method="POST">
+            <input title="You email is secure with us" placeholder="Enter your email address" type="email"
+                   name="email_name" required> <br>
+            <input title="You data is secure with us" placeholder="Enter your age in years" type="number"
+                   name="age_name" required> <br>
+            <input title="We strive to keep your data safe" placeholder="Enter height in inches" type="number"
+                   min="50", max="100", step="0.01" name="height_name" required> <br>
+            <button type="submit">Submit</button>
+
+        </form>
+    </div>
+
+</body>
+</html>
